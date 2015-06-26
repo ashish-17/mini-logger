@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "logger.h"
+#include "Logger.h"
 
 void func1() {
     LOG_PROLOG();
@@ -20,6 +20,9 @@ void func3() {
 }
 
 int main() {
+    LOG_INIT_CONSOLE();
+    LOG_INIT_FILE();
+
     func1();
     func2();
     func3();
@@ -49,5 +52,7 @@ int main() {
     LOG_DEBUG("%d %d %d", 1, 2, 3);
     LOG_DEBUG("%s %d %f", "ashish", 2, 3.2);
     LOG_DEBUG("%s %d %f %u", "ashish", 2, 3.2, p);
+
+    LOG_CLOSE();
     return 0;
 }

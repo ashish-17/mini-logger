@@ -10,6 +10,9 @@
 #define LOG_LEVEL_DEBUG 4 // Include Debug info in the  logs
 #define LOG_LEVEL_VERBOSE 0xffff // All the logs (Include prolog/epilog and other such logs)
 
+#define LOG_OUTPUT_CONSOLE 0
+#define LOG_OUTPUT_FILE 1
+
 /*
     Messages with the defined level or lower will be printed others will be ignored.
     State the current log level by defining LOGGING_LEVEL
@@ -36,6 +39,9 @@
 #define LOG_PREFIX_PROLOG 0
 #define LOG_PREFIX_EPILOG 1
 
+void _log_init(int log_output_id);
+void _log_close();
+
 void _log_write(const char *const func,
                 const char *const file,
                 const unsigned line,
@@ -60,5 +66,9 @@ void _log_write(const char *const func,
 #define LOG_DEBUG(...) _LOG_MSG(LOG_LEVEL_DEBUG, __VA_ARGS__);
 #define LOG_PROLOG() _LOG_MSG_PREFIXED(LOG_LEVEL_VERBOSE, LOG_PREFIX_PROLOG);
 #define LOG_EPILOG() _LOG_MSG_PREFIXED(LOG_LEVEL_VERBOSE, LOG_PREFIX_EPILOG);
+
+#define LOG_INIT_CONSOLE() _log_init(LOG_OUTPUT_CONSOLE);
+#define LOG_INIT_FILE() _log_init(LOG_OUTPUT_FILE);
+#define LOG_CLOSE() _log_close();
 
 #endif // LOGGER_H_INCLUDED
