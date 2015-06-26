@@ -22,7 +22,7 @@
 #define LOG_STRING_VERBOSE "VERBOSE"
 #define LOG_STRING_PROLOG "PROLOG"
 #define LOG_STRING_EPILOG "EPILOG"
-#define LOG_STRING_INIT "\n\*********<<<<<INIT LOGGER>>>>>*********\n\"
+#define LOG_STRING_INIT "\n*********<<<<<INIT LOGGER>>>>>*********\n"
 #define LOG_STRING_CLOSE "\n\n*********<<<<<CLOSE LOGGER>>>>>*********\n"
 
 typedef void (*_log_dmp_callback)(const char *const log);
