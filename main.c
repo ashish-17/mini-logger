@@ -41,11 +41,11 @@ int main() {
     LOG_WARN("%s %d %f", "ashish", 2, 3.2);
     LOG_WARN("%s %d %f %u", "ashish", 2, 3.2, p);
 
-    LOG_ERROR("%d", 1);
-    LOG_ERROR("%d %d", 1, 2);
-    LOG_ERROR("%d %d %d", 1, 2, 3);
-    LOG_ERROR("%s %d %f", "ashish", 2, 3.2);
-    LOG_ERROR("%s %d %f %u", "ashish", 2, 3.2, p);
+    //LOG_ERROR("%d", 1);
+    //LOG_ERROR("%d %d", 1, 2);
+    //LOG_ERROR("%d %d %d", 1, 2, 3);
+    //LOG_ERROR("%s %d %f", "ashish", 2, 3.2);
+    //LOG_ERROR("%s %d %f %u", "ashish", 2, 3.2, p);
 
     LOG_DEBUG("%d", 1);
     LOG_DEBUG("%d %d", 1, 2);
