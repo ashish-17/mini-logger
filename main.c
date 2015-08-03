@@ -23,7 +23,7 @@ void func3() {
     LOG_EPILOG();
 }
 
-int main() {
+int testCode() {
     LOG_INIT_CONSOLE();
     LOG_INIT_FILE();
 
