@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "Logger.h"
+#include "logger.h"
+
+void func1();
+void func2();
+void func3();
 
 void func1() {
     LOG_PROLOG();

@@ -10,7 +10,7 @@
 #include <sys/time.h>
 #include <pthread.h>
 #include <stdbool.h>
-#include "Logger.h"
+#include "logger.h"
 
 #define LOGGER_BUF_SIZE 1024
 #define LOG_FILENAME_MAX_LENGTH 256
@@ -157,7 +157,7 @@ void _log_write(const char *const func,
 
     if (doAssert) {
         LOG_CLOSE();
-        _assert(output, file, line);
+        assert(output);
     }
 }
 
@@ -197,7 +197,7 @@ void getDateTime(struct tm *const tm, unsigned *const usec) {
 void getProcessAndThreadId(int *const pid, int *const tid) {
 	*pid = getpid();
 #if defined(__linux__)
-	*tid = syscall(SYS_gettid);
+	*tid = pthread_self();
 #elif defined(__MACH__)
 	*tid = pthread_mach_thread_np(pthread_self());
 #else
